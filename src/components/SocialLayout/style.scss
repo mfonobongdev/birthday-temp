@@ -1,0 +1,82 @@
+@use "../../assets/styleUtils" as *;
+
+.socialLayout {
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 56px;
+  position: static;
+  z-index: 3;
+  background-color: var(--socBg);
+  @include mq(mobile) {
+    padding-bottom: 80px;
+  }
+  .innerWrap {
+    position: relative;
+    z-index: 2;
+  }
+  .inner {
+    padding: 0;
+    width: 95%;
+    max-width: 850px;
+    margin: auto;
+    @include mq(mobile) {
+      width: 100%;
+    }
+  }
+  .circle1 {
+    bottom: 10%;
+    left: 10%;
+    height: 300px;
+    background: rgba($color: #000aff, $alpha: 0.3);
+    filter: blur(140px);
+    width: 300px;
+    border-radius: 50%;
+    @media (min-height: 800px) {
+      height: 500px;
+      width: 500px;
+    }
+  }
+  .circle2 {
+    top: -5%;
+    height: 300px;
+    right: 5%;
+    width: 500px;
+    background: rgba($color: #9e07c0, $alpha: 0.2);
+    filter: blur(160px);
+    border-radius: 50%;
+    @media (min-height: 800px) {
+      height: 500px;
+      width: 500px;
+    }
+  }
+  .circle1,
+  .circle2,
+  .circle3 {
+    position: fixed;
+    z-index: 1;
+  }
+  .circle3 {
+    bottom: -10%;
+    height: 300px;
+    width: 300px;
+    right: 5%;
+    border-radius: 50%;
+    background: rgba($color: #ff0606, $alpha: 0.4);
+    filter: blur(140px);
+    @media (min-height: 800px) {
+      height: 400px;
+      width: 400px;
+    }
+  }
+}
+.dark-mode {
+  .socialLayout {
+    @include mq(mobile) {
+      .circle1,
+      .circle2,
+      .circle3 {
+        display: none !important;
+      }
+    }
+  }
+}

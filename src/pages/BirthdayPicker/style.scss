@@ -1,0 +1,47 @@
+@use "../../assets/styleUtils" as *;
+
+.formContainer {
+  --rmdp-primary-purple: #5f04ba;
+  form {
+    min-height: 400px;
+    @include flex(
+      $justify: space-between,
+      $direction: column,
+      $align: flex-start
+    );
+    & > .date-wrap {
+      width: 100%;
+    }
+  }
+  .rmdp-container {
+    width: 100%;
+    color: var(--primary);
+    svg {
+      margin-left: 0.4rem;
+      left: 2.5px !important;
+      right: unset !important;
+    }
+    input {
+      padding-left: 2rem;
+    }
+  }
+  .calendar-select {
+    width: 100%;
+    @include flex($justify: flex-end);
+    margin: 1rem 0;
+    span {
+      margin-right: 1rem;
+      font-size: 0.9rem;
+    }
+    select {
+      border: none;
+      color: var(--primary) !important;
+      height: fit-content;
+      width: fit-content;
+      padding: 0.5rem 0;
+      &:focus {
+        background: none;
+      }
+    }
+  }
+}

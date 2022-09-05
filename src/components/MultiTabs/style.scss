@@ -1,0 +1,30 @@
+@use "../../assets/styleUtils/" as *;
+
+.multiTab {
+  width: 100%;
+  display: flex;
+  background-color: var(--whiteBg);
+  margin: auto;
+
+  .btn {
+    flex-grow: 2;
+    border: none;
+    background: var(--whiteBg);
+    color: var(--primary);
+    // opacity: 0.6;
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 14px;
+    height: unset;
+    padding: 17px 0;
+    border-radius: 0;
+    &.active {
+      // opacity: 1;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 16px;
+      color: var(--primary);
+      border-bottom: 2px solid var(--primary);
+    }
+  }
+}

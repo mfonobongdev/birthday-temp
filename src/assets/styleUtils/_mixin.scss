@@ -1,0 +1,77 @@
+@use "./variables" as *;
+
+@mixin button {
+  padding: 10px 0px;
+  border: transparent;
+  cursor: pointer;
+  border-radius: 5px;
+  &:focus {
+    outline: none;
+  }
+}
+
+// flex mixin
+@mixin flex($direction: row, $justify: center, $align: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+@mixin mq2($arg) {
+  @media screen and (max-width: $arg) {
+    @content;
+  }
+}
+
+// media queries
+@mixin mq($arg) {
+  $size: map-get(
+    $map: $breakpoint,
+    $key: $arg,
+  );
+
+  @media only screen and (max-width: $size) {
+    @content;
+  }
+}
+
+@mixin webkit {
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background: #f0f2f3;
+  }
+
+  &::-webkit-scrollbar {
+    height: 0px;
+    width: 4px;
+    background: var(--primary);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background: var(--primary);
+  }
+}
+
+@mixin webkit2 {
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background: #f0f2f3;
+    background: #c4c4c4;
+    border-radius: 30px;
+  }
+
+  &::-webkit-scrollbar {
+    height: 0px;
+    width: 4px;
+    background: var(--whiteBg);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background: var(--whiteBg);
+  }
+}

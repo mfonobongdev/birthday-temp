@@ -1,0 +1,40 @@
+@use "../../assets/styleUtils" as *;
+
+.postCard {
+  button b {
+    color: var(--primary);
+  }
+
+  // max-width: 450px;
+  .body {
+    padding-bottom: 1rem;
+    .msg {
+      margin-bottom: 1rem;
+      font-weight: 400;
+    }
+    button {
+      font-size: 12px;
+    }
+    .feedbacks {
+      @include flex($justify: space-between);
+      color: var(--blackClr);
+      opacity: 0.6;
+      margin: auto;
+      margin-top: 0.6rem;
+      width: 85%;
+      font-size: 10px;
+      @include mq(mobile) {
+        width: 100%;
+      }
+      .likes {
+        svg path {
+          fill: var(--blackClr);
+        }
+        @include flex($justify: flex-start);
+        p {
+          margin-left: 0.2rem;
+        }
+      }
+    }
+  }
+}

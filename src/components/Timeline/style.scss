@@ -1,0 +1,21 @@
+@use "../../assets/styleUtils" as *;
+
+.timeline {
+  @include flex($align: flex-start, $justify: flex-start);
+  .year {
+    @include flex($align: flex-start, $justify: space-between);
+    padding-bottom: 2.5rem;
+    margin-right: 1rem;
+    width: 45px;
+    border-right: 1px dashed var(--primary);
+    svg {
+      margin: -1px -5px 0 0 !important;
+      width: 10px !important;
+      height: 10px !important;
+    }
+  }
+  &:last-child .year {
+    padding-bottom: 0;
+    border-right: unset;
+  }
+}

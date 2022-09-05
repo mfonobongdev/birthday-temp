@@ -1,0 +1,56 @@
+@use "../../assets/styleUtils/" as *;
+
+.chatDiv {
+  width: 100%;
+
+  .contain {
+    background-color: rgba($color: #ffffff, $alpha: 0.4);
+    padding: 20px 18px;
+    width: 100%;
+    @include mq(mobile) {
+      background-color: var(--whiteBg);
+    }
+    .people {
+      display: flex;
+      justify-content: space-between;
+      height: 80vh;
+      position: relative;
+      .left {
+        width: 40%;
+        height: 100%;
+        overflow-x: auto;
+        @include webkit;
+
+        @include mq2(768px) {
+          width: 100%;
+        }
+      }
+      .right {
+        width: 55%;
+        height: 100%;
+
+        background: var(--whiteBg);
+        @include mq2(768px) {
+          width: 100%;
+          position: fixed;
+          padding-top: 20px;
+          top: 0;
+          z-index: 5;
+          bottom: 0;
+          transform: translateX(150vw);
+          left: 0;
+          transition: 0.5s ease;
+          right: 0;
+        }
+        @include mq(mobile) {
+          padding-top: 0;
+        }
+        &.trans {
+          @include mq2(768px) {
+            transform: translateX(0vw);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,89 @@
+@use "../../assets/styleUtils/" as *;
+.formContainer {
+  form {
+    width: 75%;
+    margin: auto;
+    @media (max-width: 600px) {
+      width: 85%;
+    }
+    .separate {
+      margin-top: 118px;
+      .coverLine {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        .line1 {
+          background: linear-gradient(
+            90deg,
+            #c4c4c4 1.03%,
+            rgba(196, 196, 196, 0) 100%
+          );
+          width: 45%;
+          height: 2px;
+          transform: matrix(-1, 0, 0, 1, 0, 0);
+        }
+        .line2 {
+          background: linear-gradient(
+            90deg,
+            #c4c4c4 1.03%,
+            rgba(196, 196, 196, 0) 100%
+          );
+          width: 45%;
+          height: 2px;
+        }
+      }
+    }
+    .loginWith {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+    .push {
+      margin-top: 15px;
+      font-weight: 600;
+      font-size: 11.9323px;
+      line-height: 12px;
+      color: var(--primary);
+      text-align: center;
+      width: 100%;
+      a {
+        text-decoration: underline;
+        transition: 0.3s ease;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    .toggleSide {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin-top: 20px;
+    }
+    .group {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      button {
+        width: 48%;
+        border: 0.858113px solid var(--primary);
+        box-sizing: border-box;
+        border-radius: 25.7434px;
+        color: var(--primary);
+        font-size: 11px;
+        font-weight: 600;
+        background: transparent;
+      }
+    }
+    .upload {
+      .preview {
+        width: 120px;
+        height: 120px;
+      }
+    }
+  }
+}

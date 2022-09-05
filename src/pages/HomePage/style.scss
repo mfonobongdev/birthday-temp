@@ -1,0 +1,27 @@
+@use "../../assets/styleUtils/" as *;
+.homepage {
+  @include flex($justify: space-between, $align: flex-start);
+  .left {
+    width: calc(100% / 8 * 4.4);
+    @include mq(tablet) {
+      width: 96%;
+      margin-top: 46px;
+      margin: auto;
+    }
+  }
+  &.allPosts .left {
+    @include mq(tablet) {
+      margin-top: 0;
+    }
+  }
+  .right {
+    width: calc(100% / 8 * 3.3);
+    position: sticky;
+    top: 56px;
+    padding: 1.2rem 0;
+    @include mq(tablet) {
+      width: 0;
+      overflow: hidden;
+    }
+  }
+}

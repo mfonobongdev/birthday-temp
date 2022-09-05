@@ -1,0 +1,74 @@
+@use "../../assets/styleUtils/" as *;
+
+.edit-modal.bt-modal {
+  display: flex;
+  &.slideUp {
+    display: none;
+  }
+  @include mq(mobile) {
+    background-color: transparent;
+    transition: transform 0.5s ease;
+    transform: translateX(150vh);
+    display: block;
+    &.slideUp {
+      display: block;
+      transform: translateX(0);
+    }
+  }
+
+  .bt-modal-content {
+    overflow-y: auto;
+    padding: 0 0.5rem;
+    max-height: 700px;
+    @include webkit;
+    position: relative;
+    @include mq(mobile) {
+      border-radius: 0;
+      width: 100%;
+      min-height: 100%;
+      max-height: unset;
+    }
+  }
+  form {
+    margin: 1rem auto;
+    width: 95%;
+    max-width: 437px;
+    min-height: 80%;
+    @include flex($direction: column, $justify: space-between);
+    @include mq(mobile) {
+      min-height: 90%;
+    }
+    & > div {
+      width: 100%;
+    }
+    .upload-wrap {
+      @include flex($direction: column);
+    }
+    .form-group .input-icon-wrap {
+      border-radius: 10px;
+      height: 50px;
+    }
+    .btn.submitBtn {
+      max-width: 327px;
+    }
+  }
+  .actions {
+    position: absolute;
+    top: 5%;
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    @include flex($justify: space-between);
+    svg path {
+      fill: var(--blackClr);
+    }
+    @include mq(mobile) {
+      top: 3%;
+    }
+    .cancel {
+      @include mq(mobile) {
+        display: none;
+      }
+    }
+  }
+}

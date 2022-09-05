@@ -1,0 +1,155 @@
+@use "../../../assets/styleUtils/index" as *;
+
+.topSection {
+  width: 100%;
+  .text {
+    width: 95%;
+    margin: auto;
+    max-width: 1200px;
+    margin-top: 60px;
+    h4 {
+      font-weight: bold;
+      font-size: 30.3876px;
+      line-height: 32px;
+      margin-bottom: 20px;
+      color: var(--primary);
+    }
+    p {
+      font-size: 17px;
+      line-height: 17px;
+      color: var(--blackClr);
+      width: 400px;
+      @include mq2(768px) {
+        width: 80%;
+        line-height: 24px;
+      }
+    }
+  }
+}
+.faqSide {
+  width: 100%;
+  padding-top: 30px;
+  h4 {
+    font-weight: bold;
+    font-size: 20.3876px;
+    line-height: 32px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--primary);
+  }
+  .accordion {
+    width: 70%;
+    margin: auto;
+    .contentBx {
+      position: relative;
+      margin-bottom: 26px;
+      border-bottom: 1px solid var(--primary);
+      padding-bottom: 20px;
+      .label {
+        // padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+        align-items: center;
+        p {
+          font-size: 17px;
+          line-height: 17px;
+          color: var(--blackClr);
+          @include mq(768px) {
+            font-size: 14px;
+          }
+        }
+        img {
+          width: 15px;
+          transition: 0.3s ease;
+        }
+      }
+      .content {
+        position: relative;
+        height: 0;
+        overflow: hidden;
+        transition: 0.5s;
+        overflow-y: auto;
+        padding-left: 20px;
+        @include webkit;
+        color: rgba(0, 0, 0, 0.75);
+        @include mq2(768px) {
+          font-size: 15px;
+        }
+
+        font-size: 17px;
+        line-height: 17px;
+        color: var(--primary);
+      }
+      &.active {
+        .label {
+          img {
+            transform: rotateX(180deg);
+          }
+        }
+        .content {
+          height: 150px;
+          padding: 25px;
+        }
+      }
+    }
+  }
+  .seeMore {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 60px;
+    justify-content: center;
+    p {
+      font-weight: 500;
+      font-size: 18.39px;
+      line-height: 19px;
+      margin-right: 12px;
+    }
+  }
+  .faqForm {
+    width: 40%;
+    margin: auto;
+    @include mq2(768px) {
+      width: 80%;
+    }
+    textarea {
+      background: var(--inputBg);
+      border: none;
+      width: 100%;
+      border-radius: 10px;
+      outline: none;
+      padding: 10px;
+      color: var(--blackClr);
+      height: 150px;
+      padding-top: 20px;
+
+      cursor: pointer;
+    }
+    .input-icon-wrap {
+      border-radius: 10px;
+    }
+    button {
+      width: 200px;
+      margin: auto;
+      margin-top: 20px;
+    }
+  }
+}
+
+.faqTitle {
+  font-weight: bold;
+  font-size: 20.3876px;
+  line-height: 32px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: var(--primary);
+}
+
+p.get {
+  font-size: 16px;
+  line-height: 16px;
+  text-align: center;
+  color: var(--primary);
+  margin: 50px 0;
+}

@@ -1,0 +1,70 @@
+@use "../../assets/styleUtils/" as *;
+
+.nav2 {
+  width: 100%;
+  position: relative;
+  @include mq(mobile) {
+    margin-top: 0.5rem;
+  }
+  &__inner {
+    @include flex($justify: space-between);
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-weight: 500;
+    color: var(--primary);
+    padding: 0;
+    h1 {
+      font-size: 1.1rem !important;
+    }
+    .btn {
+      min-width: unset;
+      display: none;
+      @include mq(mobile) {
+        display: block;
+      }
+    }
+    .nav__list {
+      @include flex($justify: flex-end);
+      @include mq(mobile) {
+        position: absolute;
+        top: 90%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        margin: 1rem auto;
+        flex-direction: column;
+        background-color: var(--primary);
+        color: var(--whiteClr);
+        border-radius: 12px;
+        align-items: flex-start;
+        clip-path: inset(0 0 100% 0);
+        transition: 0.3s clip-path ease;
+        padding: 0.5rem;
+        &.showNav {
+          clip-path: inset(0);
+        }
+      }
+      .nav__link {
+        margin-left: 3rem;
+        a {
+          padding: 1.5rem 0.7rem 0.7rem 0.7rem;
+        }
+        @include mq(mobile) {
+          margin-left: 0;
+          width: 100%;
+          a {
+            padding: 1rem;
+            width: 100%;
+            display: block;
+          }
+        }
+        &.active {
+          border-radius: 0 0 17px 17px;
+          background-color: var(--primary);
+          color: var(--whiteClr);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+@use "../../assets/styleUtils/" as *;
+.noService {
+  width: 100%;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .coverBag {
+    background: var(--whiteBg);
+    width: 64px;
+    margin: 0;
+    margin-bottom: 10px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg,
+    img {
+      width: 45%;
+      height: 45%;
+    }
+  }
+
+  p.noText {
+    font-size: 14px;
+    line-height: 17px;
+    margin-bottom: 20px;
+  }
+  .noPost {
+    @include button;
+    background: var(--primary);
+    width: 158px;
+    color: white;
+  }
+  &.error {
+    .coverBag {
+      width: 100px;
+      height: 100px;
+    }
+    p.noText {
+      font-size: 1.2rem;
+      margin: 1rem 0;
+      font-weight: 500;
+    }
+  }
+}

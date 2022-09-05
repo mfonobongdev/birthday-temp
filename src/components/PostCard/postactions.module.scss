@@ -1,0 +1,20 @@
+@use "../../assets/styleUtils" as *;
+
+.actions {
+  @include flex($justify: space-between);
+  width: 85%;
+  margin: 1.2rem auto 0.7rem auto;
+  @include mq(tablet) {
+    width: 100% !important;
+  }
+  svg path {
+    fill: var(--blackClr);
+  }
+  .action {
+    @include flex($justify: flex-start);
+    p {
+      margin-left: 0.3rem;
+      font-weight: 500;
+    }
+  }
+}

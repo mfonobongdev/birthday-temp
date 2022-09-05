@@ -1,0 +1,51 @@
+@use "./variables" as *;
+
+:root {
+  --primary: #5f04ba;
+  --placeholder: #e2e2e2;
+  --inputBorder: rgba(0, 0, 0, 0.09);
+  --inputBg: rgba(0, 0, 0, 0.05);
+  --whiteClr: #fff;
+  --socDark: #f0f0f0;
+  --redClr: #d50303;
+  --blackClr: #000;
+  --whiteBg: #fff;
+  --socBg: #f0f0f0;
+  --dark-theme: false;
+}
+
+.App.dark-mode {
+  --primary: #9f40ff;
+  --placeholder: #e2e2e2;
+  --inputBorder: rgba(255, 255, 255, 0.05);
+  --inputBg: rgba(255, 255, 255, 0.05);
+  --whiteClr: #222426;
+  --whiteDark: #222426;
+  --whiteBg: #1b1c1e;
+  --redClr: #d50303;
+  --blackClr: rgba(255, 255, 255, 0.808);
+  --dark-theme: true;
+}
+$colors: (
+  primary: var(--primary),
+  placeholder: var(--placeholder),
+  inputBorder: var(--inputBorder),
+  inputBg: var(--inputBg),
+  whiteClr: var(--whiteClr),
+  redClr: var(--redClr),
+  blackClr: var(--blackClr),
+  whiteBg: var(--whiteBg),
+) !default;
+
+// to use assign classname of .clr-(colorName) to give the text color same for background with .bg-color
+@each $color, $value in $colors {
+  .clr-#{$color} {
+    color: $value;
+  }
+  .bg-#{$color} {
+    background-color: $value;
+  }
+  .fill-#{$color} {
+    fill: $value;
+  }
+}

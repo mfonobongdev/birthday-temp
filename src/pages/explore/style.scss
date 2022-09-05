@@ -1,0 +1,261 @@
+@use "../../assets/styleUtils/" as *;
+
+.exploreDiv {
+  width: 100%;
+
+  .contain {
+    background: rgba($color: white, $alpha: 0.4);
+    @include mq2(768px) {
+      background: #f8f8f8;
+    }
+
+    width: 100%;
+    .birthIcons {
+      width: 100%;
+      padding: 20px 18px;
+      padding-bottom: 0;
+      .title {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 16px;
+        margin-bottom: 15px;
+      }
+      .iconDiv {
+        width: 100%;
+        display: -webkit-box;
+        overflow-x: auto;
+        @include webkit;
+        .eachIcon {
+          width: 85px;
+          background: var(--whiteClr);
+          border-radius: 8px;
+          padding: 5px;
+          text-align: center;
+          cursor: pointer;
+          margin-right: 15px;
+          @include mq2(768px) {
+            width: 85px;
+          }
+          &:last-child {
+            margin-right: 0;
+          }
+          img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+          }
+          .iconName {
+            font-weight: 600;
+            font-size: 10px;
+            line-height: 10px;
+            margin-bottom: 4px;
+          }
+          .iconDate {
+            font-size: 8px;
+            line-height: 8px;
+
+            color: var(--primary);
+          }
+        }
+      }
+    }
+    .mateGroup {
+      width: 100%;
+      padding: 20px 18px;
+      display: flex;
+      margin-top: 40px;
+      justify-content: space-between;
+      padding-top: 0;
+      @include mq2(768px) {
+        flex-direction: column-reverse;
+        margin-top: 30px;
+      }
+      .mate {
+        width: 48%;
+        @include mq2(768px) {
+          width: 100%;
+        }
+        .topPart {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 20px;
+          align-items: center;
+          .title {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 16px;
+          }
+          .filterDiv {
+            position: relative;
+            .arrow {
+              display: flex;
+              font-size: 12px;
+              line-height: 9px;
+              color: var(--primary);
+              p {
+                color: var(--primary);
+              }
+              img {
+                margin-left: 5px;
+              }
+            }
+            .dropFilt {
+              top: 25px;
+              right: 5px;
+            }
+          }
+        }
+        .mateDiv {
+          margin-top: 15px;
+        }
+      }
+      .group {
+        width: 48%;
+        @include mq2(768px) {
+          width: 100%;
+          margin-bottom: 20px;
+        }
+        .topPart {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 20px;
+          align-items: center;
+          .title {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 16px;
+          }
+        }
+        .groupDiv {
+          margin-top: 15px;
+          @include mq2(768px) {
+            display: -webkit-box;
+            overflow-x: auto;
+            @include webkit;
+          }
+        }
+      }
+    }
+    .aboutIcon {
+      margin-top: 10px;
+      width: 100%;
+      .shareDiv {
+        background: var(--whiteBg);
+        position: relative;
+        text-align: center;
+        padding: 20px 0;
+        width: 100%;
+        width: 100%;
+        .shareDet {
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 16px;
+          text-align: center;
+
+          width: 40%;
+          margin: auto;
+          margin-bottom: 15px;
+          @include mq2(768px) {
+            width: 90%;
+            margin: auto;
+            margin-bottom: 10px;
+            font-size: 15px;
+            text-align: left;
+          }
+        }
+        .shareImage {
+          width: 105px;
+          height: 105px;
+          border-radius: 50%;
+          margin-bottom: 12px;
+        }
+        .shareName {
+          font-style: normal;
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 18px;
+
+          margin-bottom: 5px;
+        }
+        .shareDate {
+          font-size: 14px;
+          line-height: 14px;
+          color: var(--primary);
+          margin-bottom: 10px;
+        }
+        .shareRange {
+          font-size: 12px;
+          line-height: 12px;
+
+          color: rgba($color: #0f011e, $alpha: 0.3);
+        }
+      }
+      .history {
+        padding: 17px 40px;
+        width: 100%;
+        background: var(--whiteBg);
+        margin-top: 20px;
+      }
+      .hist {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 16px;
+
+        margin-bottom: 16px;
+      }
+      .historyDetails {
+        font-size: 12px;
+        line-height: 20px;
+        /* or 117% */
+
+        letter-spacing: 0.03em;
+
+        margin-bottom: 30px;
+      }
+      .img {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 16px;
+
+        margin-bottom: 16px;
+      }
+      .imageBox {
+        width: 100%;
+        display: -webkit-box;
+        margin-bottom: 30px;
+        overflow-x: auto;
+        @include mq2(768px) {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          overflow-x: unset;
+        }
+        @include webkit;
+        img {
+          width: 150px;
+          border-radius: 8px;
+          display: block;
+          margin-right: 15px;
+          @include mq2(768px) {
+            width: 48%;
+            margin-right: 0;
+            margin-bottom: 15px;
+          }
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+      .achieve {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 16px;
+
+        margin-bottom: 16px;
+      }
+    }
+  }
+}

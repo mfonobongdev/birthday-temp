@@ -1,0 +1,238 @@
+@import "../../../assets/styleUtils";
+.home {
+  background-color: var(--whiteBg);
+  h4 {
+    line-height: 29px;
+  }
+  .nav2 {
+    margin-top: 0 !important;
+  }
+  .layout {
+    height: auto;
+    overflow: hidden;
+    .circle1 {
+      bottom: -10%;
+      left: -5%;
+    }
+    .circle2 {
+      top: -7%;
+      right: -10%;
+    }
+    .circle3 {
+      bottom: -10%;
+      right: -10%;
+    }
+  }
+  .inner {
+    width: 95%;
+    max-width: 900px;
+    margin: auto;
+  }
+  .btn {
+    border-radius: 50px;
+    width: fit-content;
+    margin: 1rem 0;
+    min-width: 180px;
+    padding: 0.5rem 1rem;
+  }
+  section.flex {
+    width: 100%;
+    min-height: 80vh;
+    // @include flex();
+    .inner {
+      @include flex($justify: space-between);
+      flex-wrap: wrap;
+      padding: 4rem 0;
+      .left,
+      .right {
+        width: 48%;
+        @include mq(mobile) {
+          width: 100% !important;
+          text-align: center;
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+          h1,
+          h2,
+          h4,
+          p,
+          .btn {
+            margin-left: auto;
+            margin-right: auto;
+          }
+        }
+        img {
+          width: 100%;
+        }
+      }
+      div.textWrap {
+        width: 40%;
+      }
+    }
+  }
+  section {
+    position: relative;
+  }
+  section.hero {
+    align-items: flex-end;
+    min-height: 70vh;
+    .inner {
+      height: 100%;
+      margin: 0 auto;
+      padding-bottom: 0;
+      max-width: 1200px;
+      .left {
+        text-align: left;
+      }
+      .right {
+        margin-bottom: 0 !important;
+      }
+    }
+    h1,
+    h4 {
+      color: var(--primary);
+      font-weight: 700;
+    }
+    h1 {
+      margin: 0.4rem 0;
+      font-size: 3rem;
+    }
+    h4 {
+      font-size: 1.6rem;
+    }
+    p {
+      max-width: 387px;
+    }
+  }
+  section.explore {
+    img {
+      max-height: 530px;
+      max-width: 300px;
+      @include mq(tablet) {
+        max-height: 450px;
+        max-width: 250px;
+      }
+    }
+    h4 {
+      color: var(--primary);
+      font-size: 1.5rem;
+      max-width: 274px;
+    }
+  }
+  section.join {
+    background: url("../../../assets/images/Background.png") no-repeat center
+      center;
+    background-size: 100% 100%;
+    @include flex();
+    min-height: 620px;
+    @include mq(mobile) {
+      background-size: cover;
+      min-height: 400px;
+    }
+    .inner {
+      max-width: unset;
+      @include flex($justify: flex-end);
+      .left {
+        width: fit-content;
+      }
+      h1 {
+        font-size: 3.5rem;
+        color: white;
+        text-align: left !important;
+        @include mq(mobile) {
+          font-size: 2.8rem;
+        }
+      }
+      .btn {
+        color: var(--primary);
+        background: white;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+      }
+    }
+  }
+  .features {
+    flex-direction: column;
+    padding: 3rem 0;
+    &__wrap {
+      @include flex();
+      margin: auto;
+      flex-wrap: wrap;
+    }
+    &__card {
+      padding: 1.5rem 1rem;
+      border: 1px solid var(--primary);
+      border-radius: 10px;
+      width: 30%;
+      max-width: 220px;
+      margin: 0 auto;
+      background: var(--whiteClr);
+      position: relative;
+
+      @include mq(mobile) {
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+
+      header {
+        display: flex;
+        margin-bottom: 0.5rem;
+        svg {
+          margin-right: 0.6rem;
+        }
+      }
+      p {
+        font-size: 0.9rem;
+      }
+    }
+    &__img {
+      max-width: 470px;
+      margin: 4rem auto;
+      margin-bottom: 1rem;
+      max-height: 504px;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  .btn-wrap {
+    @include flex($justify: flex-start);
+    margin-top: 1rem;
+    .store {
+      width: 134px;
+      height: 46px;
+      &:first-child {
+        margin-right: 1rem;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  .download {
+    background-color: #fafafa;
+    @include flex($align: flex-end);
+    min-height: 50vh;
+    .inner {
+      @include flex($align: center, $direction: column);
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    h1 {
+      color: var(--primary);
+      margin-bottom: 0.7rem;
+    }
+  }
+  footer {
+    margin-top: 0;
+  }
+  .btn {
+    color: white;
+  }
+}
+.dark-mode {
+  .home .download {
+    background-color: darken($color: #fafafa, $amount: 90);
+  }
+}

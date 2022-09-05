@@ -1,0 +1,202 @@
+@use "../../assets/styleUtils" as *;
+
+.bt-modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba($color: #000000, $alpha: 0.6);
+  z-index: 15;
+  @include flex();
+  @include mq(tablet) {
+    display: none;
+    &.fade {
+      display: none;
+    }
+  }
+  .bt-modal-content {
+    .ctrl {
+      width: 37px;
+      height: 37px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      @include mq(tablet) {
+        display: none;
+      }
+      &-left {
+        left: -10%;
+      }
+      &-right {
+        right: -10%;
+      }
+      &-cancel {
+        top: -2%;
+        transform: translateY(0);
+        right: -8%;
+        background-color: rgba($color: #fff, $alpha: 0.5);
+        color: var(--whiteClr);
+      }
+    }
+    position: relative;
+    @include flex($justify: space-between);
+    width: 95%;
+    max-height: 550px;
+    height: 95%;
+    max-width: 1050px;
+    margin: auto;
+    font-size: 13px;
+    background-color: var(--whiteClr);
+    border-radius: 30px;
+    padding: 0;
+    z-index: 20;
+  }
+
+  h4 {
+    margin: 1rem 0 0.5rem 0;
+  }
+  .left {
+    width: calc(100% / 3 * 1.9);
+    height: 100%;
+    & > div {
+      width: 100%;
+    }
+    .slick-dots {
+      bottom: 10px !important;
+      li button {
+        color: var(--inputBg);
+      }
+      li.slick-active {
+        button::before {
+          color: #5f04ba !important;
+          opacity: 1;
+        }
+      }
+    }
+    .slick-slider,
+    .slick-list,
+    .slick-track,
+    .slick-track div {
+      height: 100%;
+    }
+    .postImg {
+      height: 100%;
+      padding-top: unset;
+      img {
+        position: static;
+        object-fit: cover;
+        border-radius: 30px;
+      }
+    }
+  }
+  .cardFooter .cardActions {
+    width: 100%;
+  }
+  .right {
+    width: calc(100% / 3 * 1);
+    flex-grow: 2;
+    padding: 1.2rem;
+    margin-left: 1rem;
+    @include flex($justify: space-between, $direction: column, $align: stretch);
+    min-height: 100%;
+    max-height: 100%;
+    .comments {
+      flex-grow: 2;
+      overflow-y: auto;
+      overflow-x: hidden;
+      @include webkit;
+    }
+  }
+  .cardFooter {
+    border-top: 1px solid var(--inputBg);
+
+    button svg {
+      width: 1rem;
+      height: 1rem;
+    }
+    button p {
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+  }
+}
+
+.comment {
+  font-size: 11px;
+  width: 100%;
+  font-weight: 500;
+  button {
+    font-weight: 500;
+    font-size: 11px;
+  }
+  @include flex($justify: flex-start, $align: flex-start);
+  margin: 0.5rem 0;
+  .avatar {
+    width: 24px;
+    height: 24px;
+    margin-right: 0.4rem;
+  }
+  .post-text {
+    flex-grow: 2;
+  }
+  .postComment {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 0.5rem;
+    background: #f8f8f8;
+    margin-bottom: 0.3rem;
+    width: fit-content;
+    margin-right: 12px;
+    line-height: 18px;
+    border-radius: 8px 8px 8px 0;
+  }
+}
+.dark-mode .postComment {
+  background: var(--whiteBg);
+}
+.postModal--mobile {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  inset: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: none;
+  background-color: var(--whiteClr);
+  padding-bottom: 76px;
+  z-index: 20;
+  .comments {
+    padding: 0 1.5rem;
+    h4 {
+      margin-bottom: 0.9rem;
+    }
+  }
+  .ctrl-cancel {
+    padding: 0.6rem 1.2rem;
+    width: 100%;
+    justify-content: flex-start;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 30;
+    border-radius: 0;
+    background-color: var(--whiteClr);
+    svg path {
+      fill: var(--blackClr);
+    }
+    // margin-bottom: -0.5rem;
+  }
+
+  display: none;
+  transition: transform 0.5s ease;
+  @include mq(tablet) {
+    transform: translateX(150vh);
+    display: block;
+    &.slideUp {
+      transform: translateX(0);
+    }
+  }
+}

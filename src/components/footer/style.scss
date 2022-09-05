@@ -1,0 +1,57 @@
+@use "../../assets/styleUtils/" as *;
+
+footer {
+  margin-top: 30px;
+  border-top: 3px solid var(--primary);
+  padding-top: 60px;
+  padding-bottom: 40px;
+  .topSide {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin: auto;
+    justify-content: space-between;
+    @include mq2(768px) {
+      flex-direction: column;
+      width: 80%;
+      justify-content: unset;
+    }
+    .eachSide {
+      display: flex;
+      flex-direction: column;
+      @include mq2(768px) {
+        margin-bottom: 20px;
+      }
+      p {
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 25px;
+        color: var(--primary);
+        margin-bottom: 25px;
+      }
+      a {
+        margin-bottom: 15px;
+        font-size: 16px;
+        line-height: 16px;
+        color: var(--blackClr);
+        margin-bottom: 15px;
+      }
+    }
+  }
+  p.last {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    color: var(--blackClr);
+    opacity: 0.5;
+    margin-top: 70px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 18px;
+      margin: 0 10px;
+    }
+  }
+}

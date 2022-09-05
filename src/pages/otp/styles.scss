@@ -1,0 +1,21 @@
+@use "../../assets/styleUtils/" as *;
+form > div {
+  width: 100%;
+}
+.otp-wrap {
+  width: 100%;
+  justify-content: center;
+  input {
+    border: 1px solid var(--inputBg);
+    width: 100%;
+    background: var(--inputBorder);
+    width: 40px !important;
+    border-radius: 10px;
+    height: 45px;
+    font-family: "Epilogue", sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin: 0 auto;
+    padding: 0;
+  }
+}

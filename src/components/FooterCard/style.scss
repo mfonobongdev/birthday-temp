@@ -1,0 +1,14 @@
+@use "../../assets/styleUtils/" as *;
+.footerCard {
+  height: 100px;
+  @include flex($justify: space-between, $direction: column);
+  & > div {
+    width: max-content;
+    @include flex();
+    p,
+    a {
+      opacity: 0.6;
+      margin: 0 0.3rem;
+    }
+  }
+}

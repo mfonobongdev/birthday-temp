@@ -1,0 +1,370 @@
+@use "../../assets/styleUtils/" as *;
+.profileDiv {
+  width: 100%;
+  .bgImg {
+    width: 100%;
+    height: 125px;
+    background-image: url("../../assets/images/bg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    .zodiac {
+      background: rgba($color: var(--primary), $alpha: 0.4);
+      backdrop-filter: blur(9px);
+      /* Note: backdrop-filter has minimal browser support */
+      color: white;
+      width: 106px;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 12px;
+      color: #ffffff;
+      height: 30px;
+      @include mq2(768px) {
+        width: 76px;
+      }
+    }
+    @include mq2(768px) {
+    }
+  }
+  .userContainer {
+    background: var(--whiteBg);
+    width: 100%;
+    .aboutUser {
+      width: 60%;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      @include mq2(768px) {
+        width: 80%;
+      }
+      @include mq2(500px) {
+        width: 90%;
+      }
+      .userImage {
+        width: 111px;
+        height: 111px;
+        border-radius: 50%;
+        margin-top: -30px;
+      }
+      .first {
+        display: flex;
+        justify-content: space-between;
+        width: 70%;
+        flex-direction: column;
+        @include mq2(500px) {
+          // width: 50%;
+          margin-left: 14px;
+          flex: auto;
+        }
+        .flexer {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          .aboutUserText {
+            margin-top: 15px;
+            .username {
+              font-weight: 500;
+              font-size: 22px;
+              line-height: 23px;
+              margin-bottom: 3px;
+              color: var(--blackClr);
+            }
+            .userDate {
+              color: var(--primary);
+              font-weight: 500;
+              font-size: 14px;
+              line-height: 14px;
+            }
+            .location {
+              display: flex;
+              align-items: center;
+              margin-top: 5px;
+              font-size: 10px;
+              line-height: 10px;
+              color: rgba($color: var(--blackClr), $alpha: 0.6);
+            }
+          }
+          .edit {
+            border: 2px solid var(--primary);
+            box-sizing: border-box;
+            border-radius: 30px;
+            color: var(--primary);
+            background: var(--whiteBg);
+            width: 140px;
+            margin-top: 10px;
+            font-size: 12px;
+            line-height: 12px;
+            display: flex;
+            align-items: center;
+            @include mq2(768px) {
+              display: none;
+            }
+            img {
+              margin-left: 3px;
+            }
+          }
+        }
+        .userDesc {
+          font-size: 12px;
+          line-height: 12px;
+          margin-top: 10px;
+          color: var(--blackClr);
+          @include mq2(768px) {
+            display: none;
+          }
+        }
+      }
+    }
+    .userDescMobile {
+      display: none;
+      p {
+        width: 80%;
+        margin: auto;
+        font-size: 12px;
+        line-height: 12px;
+        margin-top: 10px;
+        color: var(--blackClr);
+      }
+      @include mq2(768px) {
+        display: block;
+      }
+      .takeAction {
+        display: flex;
+        width: 90%;
+        margin: auto;
+        justify-content: space-between;
+        margin-top: 20px;
+        .edit,
+        .new {
+          border: 2px solid var(--primary);
+          box-sizing: border-box;
+          border-radius: 30px;
+          width: 47%;
+
+          background: var(--whiteBg);
+          color: var(--primary);
+          font-weight: bold;
+          font-size: 12px;
+          line-height: 12px;
+          height: 35px;
+        }
+        .new {
+          background: var(--primary);
+          color: white;
+        }
+      }
+    }
+    .userNav {
+      position: relative;
+      width: 100%;
+
+      .multiTab {
+        width: 50%;
+        margin-top: 30px;
+        @include mq2(768px) {
+          width: 95%;
+        }
+        @include mq2(508px) {
+          width: 98%;
+        }
+      }
+      .filterDiv {
+        position: relative;
+        display: none;
+        @include mq2(768px) {
+          display: block;
+        }
+        .arrow {
+          display: flex;
+          position: absolute;
+          top: -20px;
+          right: 60px;
+          cursor: pointer;
+          align-items: center;
+          @include mq2(768px) {
+            top: 20px;
+            right: 30px;
+          }
+          p {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 16px;
+            text-align: center;
+            margin-right: 10px;
+            color: var(--blackClr);
+          }
+        }
+        .toggleBox {
+          position: absolute;
+          top: 15px;
+          right: 30px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          p {
+            font-weight: 600;
+            font-size: 13px;
+            line-height: 10px;
+            color: var(--blackClr);
+            margin-right: 10px;
+          }
+          .switch {
+            position: relative;
+            width: 36px;
+            height: 21.05px;
+            float: right;
+          }
+          .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+          }
+
+          .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--primary);
+            -webkit-transition: 0.4s;
+            transition: 0.4s;
+          }
+
+          .slider:before {
+            position: absolute;
+            content: "";
+            height: 14px;
+            width: 14px;
+            left: 4px;
+            bottom: 4px;
+            background-color: var(--whiteBg);
+
+            -webkit-transition: 0.4s;
+            transition: 0.4s;
+          }
+
+          input:checked + .slider {
+            // background-color: #2196F3;
+          }
+
+          input:focus + .slider {
+            box-shadow: 0 0 1px #ffffff;
+          }
+
+          input:checked + .slider:before {
+            -webkit-transform: translateX(13px);
+            -ms-transform: translateX(13px);
+            transform: translateX(13px);
+          }
+
+          /* Rounded sliders */
+          .slider.round {
+            border-radius: 34px;
+          }
+
+          .slider.round:before {
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.archiveDisplay {
+  margin-top: 20px;
+  width: 100%;
+
+  background: var(--whiteBg);
+  padding: 20px 0 50px;
+  @include mq2(768px) {
+    margin-top: 49px;
+  }
+  .gallery {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    @include mq2(768px) {
+      width: 90%;
+    }
+    .eachPicture {
+      width: 48%;
+      border-radius: 20px;
+      margin-bottom: 25px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      height: 200px;
+      transition: 0.5s ease;
+      @include mq2(768px) {
+        height: 120px;
+      }
+      &:hover {
+        background-size: 110% 110%;
+      }
+    }
+  }
+}
+
+.wishDisplay {
+  margin-top: 20px;
+  width: 100%;
+
+  background: var(--whiteBg);
+  padding: 20px 0 50px;
+  @include mq2(768px) {
+    margin-top: 40px;
+  }
+  .listContainer {
+    width: 50%;
+    margin: auto;
+    @include mq2(768px) {
+      width: 80%;
+    }
+    .eachList {
+      width: 100%;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 0.5px solid rgba($color: var(--blackClr), $alpha: 0.4);
+      padding-bottom: 10px;
+      p {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 16px;
+        /* identical to box height, or 133% */
+
+        letter-spacing: 0.01em;
+
+        color: var(--blackClr);
+      }
+      .actions {
+        display: flex;
+        button {
+          background: none;
+          border: none;
+          padding: 7px;
+          height: unset;
+        }
+      }
+    }
+  }
+}
+
+.homepage {
+  .left {
+    @include mq2(768px) {
+      margin-top: 40px;
+    }
+  }
+}

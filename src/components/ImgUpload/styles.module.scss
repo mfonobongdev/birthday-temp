@@ -1,0 +1,71 @@
+@use "../../assets/styleUtils/" as *;
+.uploadFile {
+  width: 120px;
+  // max-width: 43vw;
+  height: 120px;
+  label {
+    width: 100%;
+    height: 100%;
+    @include flex($justify: center, $direction: column);
+    background: var(--inputBg);
+    border: 1px solid var(--inputBorder);
+    color: var(--placeholder);
+    border-radius: 50%;
+    padding: 1rem;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    img {
+      width: 16px;
+      height: 16px;
+    }
+    p {
+      font-size: 0.7rem;
+      margin-top: 1rem;
+      text-align: center;
+    }
+    img.imgSlt {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      border-radius: inherit;
+      height: 100%;
+    }
+    .editIcon {
+      position: absolute;
+      bottom: 0rem;
+      right: 0.2rem;
+      width: 30px !important;
+      height: 30px;
+      margin: 0;
+      min-width: unset;
+      background-color: black;
+      @include flex($justify: center);
+
+      svg {
+        color: white;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+.imagesWrap {
+  display: flex;
+  flex-wrap: wrap;
+  // justify-content: space-evenly;
+  .uploadFile {
+    margin: 0.5rem 10px;
+    margin-left: 0;
+    width: 140px;
+    height: 140px;
+
+    @include mq(mobile) {
+      margin: 0.5rem 0;
+      width: 47%;
+    }
+  }
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}

@@ -1,0 +1,58 @@
+@use "../../../assets/styleUtils/index" as *;
+.privacy-pg .layout {
+  height: fit-content;
+  min-height: unset;
+}
+.topSection {
+  width: 100%;
+  max-height: 400px;
+  .text {
+    width: 95%;
+    margin: auto;
+    max-width: 1200px;
+    margin-top: 60px;
+    h4 {
+      font-weight: bold;
+      font-size: 30.3876px;
+      line-height: 32px;
+      margin-bottom: 20px;
+      color: var(--primary);
+    }
+    p {
+      font-size: 17px;
+      line-height: 17px;
+      color: var(--blackClr);
+      width: 400px;
+      @include mq2(768px) {
+        width: 80%;
+        line-height: 24px;
+      }
+    }
+  }
+}
+.privacy-pg {
+  background-color: var(--whiteBg);
+}
+.writeSide {
+  width: 60%;
+  margin: auto;
+  padding-top: 60px;
+  @include mq2(768px) {
+    width: 80%;
+  }
+  .textFirst {
+    margin-bottom: 80px;
+    .head {
+      font-weight: bold;
+      font-size: 20.3876px;
+      line-height: 32px;
+      margin-bottom: 20px;
+
+      color: var(--primary);
+    }
+    .desc {
+      font-size: 18px;
+      line-height: 30px;
+    }
+  }
+}
