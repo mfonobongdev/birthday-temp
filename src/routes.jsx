@@ -26,7 +26,8 @@ function AllRoutes() {
       <div className={`App ${isThemeDark ? "dark-mode" : ""}`}>
         <ScrollToTop />
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          {/*<Route path="/" element={<HomePage />} />*/}
+          <Route path="/" element={<SignUp />} />
 
           <Route path="/upload" element={<UploadDP />} />
           <Route path="login" element={<Login />} />
@@ -35,18 +36,18 @@ function AllRoutes() {
           <Route path="signup" element={<SignUp />} />
           <Route path="signup/info" element={<MoreInfo />} />
           <Route path="signup/upload" element={<UploadDP />} />
-          <Route path="signup/birthday" element={<BirthdayPicker />} />
+          {/*<Route path="signup/birthday" element={<BirthdayPicker />} />*/}
           <Route path="otp" element={<Otp />} />
 
-          <Route path="profile" element={<Profile />} />
+          {/*<Route path="profile" element={<Profile />} />*/}
 
-          <Route path="explore" element={<Explore />} />
+          {/*<Route path="explore" element={<Explore />} />*/}
 
-          <Route path="chat" element={<Chat />} />
-          <Route path="home" element={<Home />} />
-          <Route path="help" element={<Help />} />
-          <Route path="privacy" element={<Privacy />} />
-          <Route path="friends" element={<Friends />} />
+          {/*<Route path="chat" element={<Chat />} />*/}
+          {/*<Route path="home" element={<Home />} />*/}
+          {/*<Route path="help" element={<Help />} />*/}
+          {/*<Route path="privacy" element={<Privacy />} />*/}
+          {/*<Route path="friends" element={<Friends />} />*/}
         </Routes>
       </div>
     </BrowserRouter>
