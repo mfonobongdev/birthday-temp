@@ -36,7 +36,7 @@ function AllRoutes() {
           <Route path="signup" element={<SignUp />} />
           <Route path="signup/info" element={<MoreInfo />} />
           <Route path="signup/upload" element={<UploadDP />} />
-          {/*<Route path="signup/birthday" element={<BirthdayPicker />} />*/}
+          <Route path="signup/birthday" element={<BirthdayPicker />} />
           <Route path="otp" element={<Otp />} />
 
           {/*<Route path="profile" element={<Profile />} />*/}
@@ -44,9 +44,9 @@ function AllRoutes() {
           {/*<Route path="explore" element={<Explore />} />*/}
 
           {/*<Route path="chat" element={<Chat />} />*/}
-          {/*<Route path="home" element={<Home />} />*/}
-          {/*<Route path="help" element={<Help />} />*/}
-          {/*<Route path="privacy" element={<Privacy />} />*/}
+          <Route path="home" element={<Home />} />
+          <Route path="help" element={<Help />} />
+          <Route path="privacy" element={<Privacy />} />
           {/*<Route path="friends" element={<Friends />} />*/}
         </Routes>
       </div>
